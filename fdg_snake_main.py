@@ -27,7 +27,7 @@ class Game:
         self.clock = pygame.time.Clock()
         self.score = 0
         self.font = pygame.font.SysFont(None, 32)
-        self.game_sound = pygame.mixer.Sound('.\fdg\sound\gamesound.wav')
+        self.game_sound = pygame.mixer.Sound('./fdg/sound/gamesound.wav')
         self.poin_sound = pygame.mixer.Sound('./fdg/sound/point.wav')
         self.snake = Snake()
         self.game_play = True
