@@ -11,7 +11,12 @@ RED = (255, 10, 0)
 
 STEP = 30
 
-def load_image(sre, x, y):
+def load_image(sre: str, x: int, y: int):
+    '''
+    input:
+    sre - путь к картинке
+    x, y - кординаты
+    '''
     image = pygame.image.load(sre).convert()
     image = pygame.transform.scale(image, (STEP, STEP))
     rect = image.get_rect(center=(x, y))
