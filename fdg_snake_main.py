@@ -75,8 +75,8 @@ class Game:
             self.leter_rect.x = self.snake.snake_lst[-1]['rct'].x
             self.leter_rect.y = self.snake.snake_lst[-1]['rct'].y
             self.snake.snake_lst.append({'img': self.leter_image.copy(), 'rct': self.leter_rect.copy()})
-            x = randint(40, 760)
-            y = randint(30, 560)
+            x = randint(STEP, 800-STEP)
+            y = randint(STEP, 600-STEP)
             self.score = self.score + 10
             letter_dct = load_image(next(self.inf_edlach_letters), x, y)
             self.leter_image, self.leter_rect = letter_dct['img'], letter_dct['rct']
@@ -95,7 +95,7 @@ class Game:
 
 class Snake:
     def __init__(self):
-        self.STEP = 30
+        self.STEP = STEP
         self.DIRECTION = [self.STEP, 0]
         self.x_x = 400
         self.y = 300
