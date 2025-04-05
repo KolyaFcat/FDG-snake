@@ -51,7 +51,7 @@ class Game:
     def main(self):
         self.game_sound.play(-1)
         while self.game_play:
-            self.screen.fill(ORANNG)
+            self.screen.fill(BLACK)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -101,7 +101,7 @@ class Snake:
         self.DIRECTION = [self.STEP, 0]
         self.x_x = 400
         self.y = 300
-        self.snake_lst = [load_image('./Edlach/pics/head.png', self.x_x, self.y)]
+        self.snake_lst = [load_image('./fdg/pics/head.png', self.x_x, self.y)]
 
     def move(self, keys):
         if keys[pygame.K_LEFT] and self.DIRECTION[0] == 0:
