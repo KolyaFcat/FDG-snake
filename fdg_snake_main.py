@@ -8,6 +8,7 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 ORANNG =(255, 152, 0)
 RED = (255, 10, 0)
+BLAU = (79, 204, 242)
 
 STEP = 30
 
@@ -30,18 +31,18 @@ class Game:
         self.FPS = 8
         pygame.init()
         pygame.display.set_caption('My SNAKE for Edlach')
-        self.screen = pygame.display.set_mode((1500, 800))
+        self.screen = pygame.display.set_mode((800, 600))
         self.clock = pygame.time.Clock()
         self.score = 0
         self.font = pygame.font.SysFont(None, 32)
-        self.game_sound = pygame.mixer.Sound('.\fdg\sound\gamesound.wav')
+        self.game_sound = pygame.mixer.Sound('./fdg/sound/gamesound.wav')
         self.poin_sound = pygame.mixer.Sound('./fdg/sound/point.wav')
         self.snake = Snake()
         self.game_play = True
         self.edlach_letters = [
-            "./fdg/pics/f.png", 
-            "./fdg/pics/d.png",
-            "./fdg/pics/g.png",
+            "./fdg/pics/f.jpg", 
+            "./fdg/pics/d.jpg",
+            "./fdg/pics/g.jpg",
         ]
         self.inf_edlach_letters = itertools.cycle(self.edlach_letters)
         letter_dct = load_image(next(self.inf_edlach_letters), 200, 200)
@@ -50,7 +51,7 @@ class Game:
     def main(self):
         self.game_sound.play(-1)
         while self.game_play:
-            self.screen.fill(WHITE)
+            self.screen.fill(ORANNG)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -77,13 +78,14 @@ class Game:
             self.snake.snake_lst.append({'img': self.leter_image.copy(), 'rct': self.leter_rect.copy()})
             x = randint(STEP, 800-STEP)
             y = randint(STEP, 600-STEP)
+            self.poin_sound.play()
             self.score = self.score + 10
             letter_dct = load_image(next(self.inf_edlach_letters), x, y)
             self.leter_image, self.leter_rect = letter_dct['img'], letter_dct['rct']
 
     def text_on_screen(self, text, x, y):
         '''выводит счет игры на экран'''
-        self.text = self.font.render(text, True, ORANNG)
+        self.text = self.font.render(text, True, BLAU)
         self.text_rect = self.text.get_rect(center=(x, y))
         self.screen.blit(self.text, self.text_rect)
 
