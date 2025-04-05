@@ -9,9 +9,11 @@ BLACK = (0, 0, 0)
 ORANNG =(255, 152, 0)
 RED = (255, 10, 0)
 
+STEP = 30
+
 def load_image(sre, x, y):
     image = pygame.image.load(sre).convert()
-    image = pygame.transform.scale(image, (30, 30))
+    image = pygame.transform.scale(image, (STEP, STEP))
     rect = image.get_rect(center=(x, y))
     trnsperent = image.get_at((0, 0))
     image.set_colorkey(trnsperent)
@@ -27,7 +29,7 @@ class Game:
         self.clock = pygame.time.Clock()
         self.score = 0
         self.font = pygame.font.SysFont(None, 32)
-        self.game_sound = pygame.mixer.Sound('./fdg/sound/gamesound.wav')
+        self.game_sound = pygame.mixer.Sound('.\fdg\sound\gamesound.wav')
         self.poin_sound = pygame.mixer.Sound('./fdg/sound/point.wav')
         self.snake = Snake()
         self.game_play = True
