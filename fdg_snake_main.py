@@ -12,9 +12,9 @@ BLAU = (79, 204, 242)
 
 STEP = 50
 FPS = 8 # Кадры в секунду - Скорость
-SCREEN_WIDTH = 1000
-SCREEN_HEIGHT = 800
-FONT_SIZE = 40
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 600
+FONT_SIZE = 32
 
 def load_image(sre: str, x: int, y: int):
     '''
