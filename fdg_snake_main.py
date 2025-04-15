@@ -10,7 +10,7 @@ ORANNG =(255, 152, 0)
 RED = (255, 10, 0)
 BLAU = (79, 204, 242)
 
-STEP = 50
+STEP = 30
 FPS = 8 # Кадры в секунду - Скорость
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
