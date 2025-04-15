@@ -10,7 +10,11 @@ ORANNG =(255, 152, 0)
 RED = (255, 10, 0)
 BLAU = (79, 204, 242)
 
-STEP = 30
+STEP = 50
+FPS = 8 # Кадры в секунду - Скорость
+SCREEN_WIDTH = 1000
+SCREEN_HEIGHT = 800
+FONT_SIZE = 40
 
 def load_image(sre: str, x: int, y: int):
     '''
@@ -28,24 +32,24 @@ def load_image(sre: str, x: int, y: int):
 
 class Game:
     def __init__(self):
-        self.FPS = 8
+        self.FPS = FPS
         pygame.init()
-        pygame.display.set_caption('My SNAKE for Edlach')
-        self.screen = pygame.display.set_mode((800, 600))
+        pygame.display.set_caption('My SNAKE for FDG')
+        self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         self.clock = pygame.time.Clock()
         self.score = 0
-        self.font = pygame.font.SysFont(None, 32)
+        self.font = pygame.font.SysFont(None, FONT_SIZE)
         self.game_sound = pygame.mixer.Sound('./fdg/sound/gamesound.wav')
         self.poin_sound = pygame.mixer.Sound('./fdg/sound/point.wav')
         self.snake = Snake()
         self.game_play = True
-        self.edlach_letters = [
+        self.fdg_letters = [
             "./fdg/pics/f.jpg", 
             "./fdg/pics/d.jpg",
             "./fdg/pics/g.jpg",
         ]
-        self.inf_edlach_letters = itertools.cycle(self.edlach_letters)
-        letter_dct = load_image(next(self.inf_edlach_letters), 200, 200)
+        self.inf_fdg_letters = itertools.cycle(self.fdg_letters)
+        letter_dct = load_image(next(self.inf_fdg_letters), 200, 200)
         self.leter_image, self.leter_rect = letter_dct['img'], letter_dct['rct']
 
     def main(self):
@@ -62,11 +66,11 @@ class Game:
             keys = pygame.key.get_pressed()
             self.pickup()
             self.snake.move(keys)
-            self.text_on_screen(f"Ihre punkte:{self.score}", 400, 500)
+            self.text_on_screen(f"Ihre punkte:{self.score}", SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 + 200)
             self.gameover()
             pygame.display.update()
             self.clock.tick(self.FPS)
-        self.text_on_screen('Spiel vorbei', 400, 300)
+        self.text_on_screen('Spiel vorbei', SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
         pygame.display.update()
         time.sleep(3)
 
@@ -76,11 +80,11 @@ class Game:
             self.leter_rect.x = self.snake.snake_lst[-1]['rct'].x
             self.leter_rect.y = self.snake.snake_lst[-1]['rct'].y
             self.snake.snake_lst.append({'img': self.leter_image.copy(), 'rct': self.leter_rect.copy()})
-            x = randint(STEP, 800-STEP)
-            y = randint(STEP, 600-STEP)
+            x = randint(STEP, SCREEN_WIDTH-STEP)
+            y = randint(STEP, SCREEN_HEIGHT-STEP)
             self.poin_sound.play()
             self.score = self.score + 10
-            letter_dct = load_image(next(self.inf_edlach_letters), x, y)
+            letter_dct = load_image(next(self.inf_fdg_letters), x, y)
             self.leter_image, self.leter_rect = letter_dct['img'], letter_dct['rct']
 
     def text_on_screen(self, text, x, y):
@@ -99,9 +103,9 @@ class Snake:
     def __init__(self):
         self.STEP = STEP
         self.DIRECTION = [self.STEP, 0]
-        self.x_x = 400
-        self.y = 300
-        self.snake_lst = [load_image('./fdg/pics/head.png', self.x_x, self.y)]
+        start_x = SCREEN_WIDTH // 2 + STEP // 2
+        start_y = SCREEN_HEIGHT // 2 + STEP // 2
+        self.snake_lst = [load_image('./fdg/pics/head.png', start_x, start_y)]
 
     def move(self, keys):
         if keys[pygame.K_LEFT] and self.DIRECTION[0] == 0:
@@ -113,13 +117,13 @@ class Snake:
         elif keys[pygame.K_DOWN] and self.DIRECTION[1] == 0:
             self.DIRECTION = [0, +self.STEP]
 
-        if self.snake_lst[0]['rct'].bottom < 0:
-            self.snake_lst[0]['rct'].bottom = 600
-        elif self.snake_lst[0]['rct'].top > 600:
+        if self.snake_lst[0]['rct'].top < 0:
+            self.snake_lst[0]['rct'].bottom = SCREEN_HEIGHT
+        elif self.snake_lst[0]['rct'].bottom > SCREEN_HEIGHT:
             self.snake_lst[0]['rct'].top = 0
-        elif self.snake_lst[0]['rct'].right < 0:
-            self.snake_lst[0]['rct'].right = 800
-        elif self.snake_lst[0]['rct'].left > 800:
+        elif self.snake_lst[0]['rct'].left < 0:
+            self.snake_lst[0]['rct'].right = SCREEN_WIDTH
+        elif self.snake_lst[0]['rct'].right > SCREEN_WIDTH:
             self.snake_lst[0]['rct'].left = 0
 
         for indx in range(len(self.snake_lst)-1, 0, -1):
