@@ -1,4 +1,4 @@
-## Hallo, ich bin Nikola Fedorov.
+## Hallo, ich bin Nikolai Fedorov.
 ### Игра Зейка для гимназии FDG.
 
 

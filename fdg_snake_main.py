@@ -31,6 +31,10 @@ def load_image(sre: str, x: int, y: int):
 
 
 class Game:
+    '''
+    класс игры, описывает основные параметры игры
+    игровое поле, картинки, звуки, шрифт
+    '''
     def __init__(self):
         self.FPS = FPS
         pygame.init()
@@ -53,6 +57,7 @@ class Game:
         self.leter_image, self.leter_rect = letter_dct['img'], letter_dct['rct']
 
     def main(self):
+        '''главный метод/цикл игры'''
         self.game_sound.play(-1)
         while self.game_play:
             self.screen.fill(BLACK)
@@ -88,18 +93,22 @@ class Game:
             self.leter_image, self.leter_rect = letter_dct['img'], letter_dct['rct']
 
     def text_on_screen(self, text, x, y):
-        '''выводит счет игры на экран'''
+        '''выводит текст на экран'''
         self.text = self.font.render(text, True, BLAU)
         self.text_rect = self.text.get_rect(center=(x, y))
         self.screen.blit(self.text, self.text_rect)
 
     def gameover(self):
-        '''устонавливает self.game_play = False'''
+        '''устонавливает self.game_play = False если голова змеи
+        попала на тело змеи.'''
         for segment in self.snake.snake_lst[1:]:
             if self.snake.snake_lst[0]['rct'].colliderect(segment['rct']):
                 self.game_play = False
 
 class Snake:
+    '''
+    класс змеи, хранит параметры змеи
+    '''
     def __init__(self):
         self.STEP = STEP
         self.DIRECTION = [self.STEP, 0]
@@ -108,6 +117,10 @@ class Snake:
         self.snake_lst = [load_image('./fdg/pics/head.png', start_x, start_y)]
 
     def move(self, keys):
+        '''
+        метод движения змеи, проверяет нажатие клавиш
+        и меняет направление движения
+        '''
         if keys[pygame.K_LEFT] and self.DIRECTION[0] == 0:
             self.DIRECTION = [-self.STEP, 0]
         elif keys[pygame.K_RIGHT] and self.DIRECTION[0] == 0:
