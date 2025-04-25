@@ -7,7 +7,7 @@ pics                 | Ordner mit Bildern
 sound                | Ordner mit Sounds
 fdg_snake_main.py    | Python-Programm
 
-Technologie-Stack: pygame 2.6.1
+Technologie-Stack: pygame 2.6.1, pthon 3.13.3,
 
 Klasse/Funktion             | Beschreibung
 ----------------------------|-------------------------------
