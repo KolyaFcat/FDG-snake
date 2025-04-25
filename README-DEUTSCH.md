@@ -15,7 +15,7 @@ Funktion `load_image`       | Lädt ein Bild und stellt dessen Größe ein
 Klasse `Game`               | Spielklasse, beschreibt die Hauptparameter des Spiels: Spielfeld, Bilder, Sounds, Schrift
 &nbsp; &nbsp; &nbsp; &nbsp; Funktion `__init__`         | Initialisiert die Klasse  
 &nbsp; &nbsp; &nbsp; &nbsp; Funktion `main`             | Hauptmethode/Hauptschleife des Spiels  
-&nbsp; &nbsp; &nbsp; &nbsp; Funktion `pickup`           | Wenn der Kopf den Apfel trifft, erhöht sich der Punktestand und ein neuer Apfel wird gezeichnet  
+&nbsp; &nbsp; &nbsp; &nbsp; Funktion `pickup`           | Wenn der Kopf den Burhschtarbe trifft, erhöht sich der Punktestand und ein neuer Burhschtarbe wird gezeichnet  
 &nbsp; &nbsp; &nbsp; &nbsp; Funktion `text_on_screen`   | Gibt Text auf dem Bildschirm aus  
 &nbsp; &nbsp; &nbsp; &nbsp; Funktion `gameover`         | Setzt `self.game_play = False`, wenn der Schlangenkopf den Körper trifft  
 Klasse `Snake`              | Schlange-Klasse, speichert Parameter der Schlange  
