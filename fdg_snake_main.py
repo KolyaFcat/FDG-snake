@@ -9,6 +9,7 @@ BLACK = (0, 0, 0)
 ORANNG =(255, 152, 0)
 RED = (255, 10, 0)
 BLAU = (79, 204, 242)
+DUNKEL_BLAU = (10, 10, 50)
 
 STEP = 30
 FPS = 8 # Кадры в секунду - Скорость
@@ -60,7 +61,7 @@ class Game:
         '''главный метод/цикл игры'''
         self.game_sound.play(-1)
         while self.game_play:
-            self.screen.fill(BLACK)
+            self.screen.fill(DUNKEL_BLAU)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -71,7 +72,7 @@ class Game:
             keys = pygame.key.get_pressed()
             self.pickup()
             self.snake.move(keys)
-            self.text_on_screen(f"Ihre punkte:{self.score}", SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 + 200)
+            self.text_on_screen(f"Ihre Punkte:{self.score}", SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 + 200)
             self.gameover()
             pygame.display.update()
             self.clock.tick(self.FPS)
