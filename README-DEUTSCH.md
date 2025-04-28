@@ -22,7 +22,16 @@ Klasse `Snake`              | Schlange-Klasse, die Parameter der Schlange speich
 &nbsp; &nbsp; &nbsp; &nbsp; Funktion `__init__`         | Sie initialisiert die Klasse  
 &nbsp; &nbsp; &nbsp; &nbsp; Funktion `move`             | Sie bewegt die Schlange, prüft Tasteneingaben und ändert die Richtung  
 
-Screenshot des Spiels:  
-<img width="405" alt="Screenshot 2025-04-19  Snake" src="https://github.com/user-attachments/assets/cef5d5bf-5f61-40a1-ae37-43f062128a21" />
+ 
+<p align="center">
+  <img src="https://github.com/KolyaFcat/FDG-snake/blob/master/pics/screen_01.png" width="45%" />
+  <img src="https://github.com/KolyaFcat/FDG-snake/blob/master/pics/screen%2002.png" width="45%" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/KolyaFcat/FDG-snake/blob/master/pics/screen%2004.png" width="45%" />
+  <img src="https://github.com/KolyaFcat/FDG-snake/blob/master/pics/screen%2005.png" width="45%" />
+</p>
+src="https://github.com/user-attachments/assets/cef5d5bf-5f61-40a1-ae37-43f062128a21" />
 
 Ich hoffe, es hat dir gefallen. Viel Spaß beim Spielen!
