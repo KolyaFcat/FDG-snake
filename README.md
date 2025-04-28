@@ -1,28 +1,28 @@
 ## Hallo, ich bin Nikolai Fedorov.
-### Игра Зейка для гимназии FDG.
+### Schlange-Spiel für das Friedrich-Dessauer-Gymnasium in Aschaffenburg.
 
+Dateiname            | Inhalt der Datei
+---------------------|------------------------
+pics                 | Ordner mit Bildern
+sound                | Ordner mit Sounds
+fdg_snake_main.py    | Python-Programm
 
-Название файла    | Содержание файла
-------------------|----------------------
-pics              | папка с картинками
-sound             | папка со звуками
-fdg_snake_main.py | python-программа
+Technologie-Stack: pygame 2.6.1, sys, time, random, itertools
 
-Стек технологий:  pygame 2.6.1
+Klasse/Funktion             | Beschreibung
+----------------------------|-------------------------------
+Funktion `load_image`       | Sie lädt ein Bild und stellt dessen Größe ein
+Klasse `Game`               | Spielklasse, die die Hauptparameter des Spiels: Spielfeld, Bilder, Sounds, Schrift beschreibt
+&nbsp; &nbsp; &nbsp; &nbsp; Funktion `__init__`         | Sie initialisiert die Klasse  
+&nbsp; &nbsp; &nbsp; &nbsp; Funktion `main`             | Hauptmethode/Hauptschleife des Spiels  
+&nbsp; &nbsp; &nbsp; &nbsp; Funktion `pickup`           | Wenn der Kopf den Burhschtarbe trifft, erhöht sich der Punktestand und ein neuer Burhschtarbe wird gezeichnet  
+&nbsp; &nbsp; &nbsp; &nbsp; Funktion `text_on_screen`   | Sie gibt Text auf dem Bildschirm aus  
+&nbsp; &nbsp; &nbsp; &nbsp; Funktion `gameover`         | Sie setzt `self.game_play = False`, wenn der Schlangenkopf den Körper trifft  
+Klasse `Snake`              | Schlange-Klasse, die Parameter der Schlange speichert
+&nbsp; &nbsp; &nbsp; &nbsp; Funktion `__init__`         | Sie initialisiert die Klasse  
+&nbsp; &nbsp; &nbsp; &nbsp; Funktion `move`             | Sie bewegt die Schlange, prüft Tasteneingaben und ändert die Richtung  
 
-Class/fun              | Description
------------------------|----------------------
-fun load_image         | функция загружает картинку и устанавливает её размер
-class Game             | класс игры, описывает основные параметры игры: игровое поле, картинки, звуки, шрифт
-&nbsp; &nbsp; &nbsp; &nbsp; fun init         | инициализация класса
-&nbsp; &nbsp; &nbsp; &nbsp; fun main               | главный метод/цикл игры
-&nbsp; &nbsp; &nbsp; &nbsp; fun pickup             | если попала голова на яблоко добавляет счёт и риcует новое яблоко
-&nbsp; &nbsp; &nbsp; &nbsp; fun text_on_screen     | выводит текст на экран
-&nbsp; &nbsp; &nbsp; &nbsp; fun gameover           | устонавливает self.game_play = False если голова змеи попала на тело змеи
-class Snake            | класс змеи, хранит параметры змеи
-&nbsp; &nbsp; &nbsp; &nbsp; fun init               | инициализация класса
-&nbsp; &nbsp; &nbsp; &nbsp; fun move               | метод движения змеи, проверяет нажатие клавиш и меняет направление движения
-
-
-Скриншот Игры:  
+Screenshot des Spiels:  
 <img width="405" alt="Screenshot 2025-04-19  Snake" src="https://github.com/user-attachments/assets/cef5d5bf-5f61-40a1-ae37-43f062128a21" />
+
+Ich hoffe, es hat dir gefallen. Viel Spaß beim Spielen!
