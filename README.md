@@ -25,4 +25,4 @@ Klasse `Snake`              | Schlange-Klasse, die Parameter der Schlange speich
 Screenshot des Spiels:  
 <img width="405" alt="Screenshot 2025-04-19  Snake" src="https://github.com/user-attachments/assets/cef5d5bf-5f61-40a1-ae37-43f062128a21" />
 
-Ich hoffe, es hat dir gefallen. Viel Spaß beim Spielen!
+Ich hoffe, es hat dir gefallen. Viel Spaß beim Spielen!!!
