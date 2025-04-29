@@ -7,7 +7,7 @@ pics                 | Ordner mit Bildern
 sound                | Ordner mit Sounds
 fdg_snake_main.py    | Python-Programm
 
-Technologie-Stack: pygame 2.6.1, sys, time, random, itertools
+Technologie-Stack: pygame 2.6.1, python 3.13.3,sys, time, random, itertools
 
 Klasse/Funktion             | Beschreibung
 ----------------------------|-------------------------------
